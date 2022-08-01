@@ -5,6 +5,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  paths:
+      - 'go.mod'
+      - 'go.sum'
 
 jobs:
 
@@ -20,7 +23,7 @@ jobs:
           
       - name: Build
         run: go build -v ./...
-        run: go mod init
+      
 
       - name: Test
         run: go test -v ./...
